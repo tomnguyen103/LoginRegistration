@@ -22,8 +22,8 @@ class UserManager(models.Manager):
         
         if len(post_data["birthday"]) >0 and datetime.strptime(post_data["birthday"], '%Y-%m-%d')> datetime.today():
             errors["birthday"] = "Please enter the date in the past!"
-        if len(post_data["birthday"]) >0 and (datetime.strptime(post_data["birthday"], '%Y-%m-%d') - datetime.today())>13:
-            errors["birthday"] = "You must be 13 years old to register!"
+        # if len(post_data["birthday"]) >0 and (datetime.strptime(post_data["birthday"], '%Y-%m-%d') - datetime.today())>13:
+        #     errors["birthday"] = "You must be 13 years old to register!"
 
         return errors
     
