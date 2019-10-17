@@ -14,7 +14,7 @@ class UserManager(models.Manager):
             validate_email(post_data["email"])
         except:
             errors["email"] = "Please enter a valid email!"
-        if len(post_data["password"]) < 9:
+        if len(post_data["password"]) < 8:
             errors["password"] = "Please enter at least 8 characters for Password!"
         
         if post_data["password"] != post_data["pw_confirm"]:
